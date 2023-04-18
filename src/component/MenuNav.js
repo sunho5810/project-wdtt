@@ -16,7 +16,7 @@ const MenuNav = () => {
   return (
     <div className='header'>
         <div className="inner">
-            <h1><Link to={"/"} onClick={()=>{setMenuBtn("")}}><img src='/public/images/common/wdttLogo.png' alt='로고' /></Link></h1>
+            <h1><Link to={"/"} className='logo' onClick={()=>{setMenuBtn("")}}></Link></h1>
             <div onClick={menuBtnClick} className={`menuBtn ${menuBtn}`}>
                 <span></span>
                 <span></span>
