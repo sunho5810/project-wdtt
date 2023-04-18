@@ -9,7 +9,6 @@ import Team from './page/Team';
 
 // Home
 
-
 /* 엑셀에서 데이터 뽑아오기 */
 // Members
 // 회원들 정보 나오게하기
