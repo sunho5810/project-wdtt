@@ -1,0 +1,17 @@
+body{overflow-x: hidden;}
+
+.header{position: relative; width: 100%; height: 60px; background: #333; border-bottom: 1px solid #eee; box-sizing: border-box;}
+.inner{display: flex; justify-content: flex-end; align-items: center; width: calc(100% - 40px); height: 100%; margin: 0 auto;}
+
+.menuBtn{display: flex; position: relative; flex-direction: column; gap: 4px; width: 24px; height: 14px; cursor: pointer;}
+.menuBtn span{width: 100%; height: 2px; background-color: #fff; transition: .2s;}
+.menuBtn.open span{position: relative; width: calc(100% + 1px);}
+.menuBtn.open span:nth-child(1){transform: rotateZ(45deg) translate(4.5px, 4.5px);}
+.menuBtn.open span:nth-child(2){opacity: 0;}
+.menuBtn.open span:nth-child(3){transform: rotateZ(-45deg) translate(4.5px, -4.5px);}
+
+.headerList{position: absolute; top: calc(100%); left: 100%; z-index: 9999; width: 100%; height: calc(100vh - 60px); flex-direction: column; background: #333; transition: left .2s; border-top: 1px solid #eee;}
+.headerList.open{left: 0; transition-duration: .4s;}
+.headerList__li .headerList__li__link{display: flex; align-items: flex-start; width: 100%; min-height: 44px; padding: 12px 20px; box-sizing: border-box; font-size: 16px; text-align: left; color: #fff; border-bottom: 1px solid #eee;}
+.headerList__li__p{width: 20%;}
+.headerList__li__inputWrap{width: 80%;}
