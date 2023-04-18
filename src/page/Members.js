@@ -1,24 +1,32 @@
 import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { memberAction } from '../redux/actions/memberAction';
+import MemberInfoCard from '../component/MemberInfoCard';
 
 const Members = () => {
 
-    const getGoogleSheetData = async() => {
-        let url = `https://sheets.googleapis.com/v4/spreadsheets/1r-86TPWZ2aDclAprYytrEL7XFY8x_ha9n7Ke-AlC7RQ/values/wdtt_members?key=AIzaSyBflNnPPWkh82yVIR6yDRIxMe_6c5LwqLM`
-        let response = await fetch(url);
-        let data = await response.json();
+  const memberList = useSelector((state) => state.member.memberList);
+  console.log("memberList?", memberList);
+  
+  const dispatch = useDispatch();
+  
+  const getMemberData = async() => {
+    dispatch(memberAction.getMemberData());
+  }
+  
+  useEffect(() => {
+    getMemberData();
+    }, []);
 
-        console.log("data?", data);
-    }
-
-    useEffect(() => {
-        getGoogleSheetData();
-    }, [])
-
-  return (
-    <div>
-        
-    </div>
-  )
+    return (
+      <div>
+        {
+          memberList?.map((item) => (
+            <div>{item}</div>
+          ))
+        }
+      </div>
+    )
 }
 
 export default Members

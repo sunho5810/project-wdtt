@@ -1,14 +1,15 @@
 let initState = {
-
+    memberList: {}
 }
 
 function memberReducer(state = initState, action){
     let {type, payload} = action;
 
     switch (type) {
-        case "":
+        case "GET_MEMBER_DATA_SUCCESS":
             return {
-                ...state
+                ...state,
+                memberList: payload.data
             }
     
         default:
@@ -16,3 +17,5 @@ function memberReducer(state = initState, action){
     }
 
 }
+
+export default memberReducer;
