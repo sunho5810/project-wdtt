@@ -2,12 +2,17 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import './reset.css';
 import './font.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import MenuNav from './component/MenuNav';
 import Home from './page/Home';
 import Members from './page/Members';
 import Team from './page/Team';
+import Login from './page/Login';
 
 // Home
+
+// login
+// 로그인 하면 로그인 됨
 
 /* 엑셀에서 데이터 뽑아오기 */
 // Members
@@ -28,6 +33,7 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/members' element={<Members />}/>
         <Route path='/team/:id' element={<Team />}/>
+        <Route path='/login' element={<Login />}/>
       </Routes>
     </div>
   );
